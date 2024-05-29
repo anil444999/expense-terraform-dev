@@ -3,7 +3,7 @@ module "db" {
   project_name = var.project_name
   environment = var.environment
   sg_description = "SG for DB MySQL Instances" 
-  vpc_id = data.aws_ssm_parameter.vpc.id.value
+  vpc_id = data.aws_ssm_parameter.vpc_id.value
   common_tags = var.common_tags
   sg_name = "db"
 }
@@ -13,7 +13,7 @@ module "backend" {
   project_name = var.project_name
   environment = var.environment
   sg_description = "SG for Backend Instances" 
-  vpc_id = data.aws_ssm_parameter.vpc.id.value
+  vpc_id = data.aws_ssm_parameter.vpc_id.value
   common_tags = var.common_tags
   sg_name = "backend"
 }
@@ -23,7 +23,7 @@ module "frontned" {
   project_name = var.project_name
   environment = var.environment
   sg_description = "SG for Frontend Instances" 
-  vpc_id = data.aws_ssm_parameter.vpc.id.value
+  vpc_id = data.aws_ssm_parameter.vpc_id.value
   common_tags = var.common_tags
   sg_name = "frontend"
 }
